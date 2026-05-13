@@ -4,16 +4,16 @@ import Masonry from 'react-responsive-masonry';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryImages = [
-  { id: 1, category: 'nails', url: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&h=1000&fit=crop', alt: 'Signature Red French Tips with Artistic Dot Accents' },
-  { id: 2, category: 'nails', url: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=800&h=1000&fit=crop', alt: 'Custom Patterned Nail Extensions' },
-  { id: 3, category: 'henna', url: 'https://images.unsplash.com/photo-1610088441520-4352457e7095?w=800&h=1000&fit=crop', alt: 'Intricate Bridal Henna Artistry' },
-  { id: 4, category: 'nails', url: 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&h=1000&fit=crop', alt: 'Luxury Pedicure with Custom French Design' },
-  { id: 5, category: 'henna', url: 'https://images.unsplash.com/photo-1583241800698-7a91930d4d0a?w=800&h=1000&fit=crop', alt: 'Traditional Floral Henna Patterns' },
-  { id: 6, category: 'nails', url: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=1000&fit=crop', alt: 'Classic Soft Pink Manicure' },
-  { id: 7, category: 'bridal', url: 'https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=800&h=1000&fit=crop', alt: 'Elegant Bridal Nail Set' },
-  { id: 8, category: 'nails', url: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&h=1000&fit=crop', alt: 'Matte Finish Acrylic Extensions' },
-  { id: 9, category: 'eid', url: 'https://images.unsplash.com/photo-1610088441520-4352457e7095?w=800&h=1000&fit=crop', alt: 'Eid Special Henna Design' },
-  { id: 10, category: 'nails', url: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=800&h=1000&fit=crop', alt: 'Abstract Minimalist Nail Art' },
+  { id: 1, category: 'nails', url: '/images/temi1.jpeg', alt: 'Signature Red French Tips with Artistic Dot Accents' },
+  { id: 2, category: 'nails', url: '/images/temi2.jpeg', alt: 'Custom Patterned Nail Extensions' },
+  { id: 3, category: 'henna', url: '/images/temi3.jpeg', alt: 'Intricate Bridal Henna Artistry' },
+  { id: 4, category: 'nails', url: '/images/temi4.jpeg', alt: 'Luxury Pedicure with Custom French Design' },
+  { id: 5, category: 'henna', url: '/images/temi5.jpg', alt: 'Traditional Floral Henna Patterns' },
+  { id: 6, category: 'nails', url: '/images/temi1.jpeg', alt: 'Classic Soft Pink Manicure' },
+  { id: 7, category: 'bridal', url: '/images/temi2.jpeg', alt: 'Elegant Bridal Nail Set' },
+  { id: 8, category: 'nails', url: '/images/temi3.jpeg', alt: 'Matte Finish Acrylic Extensions' },
+  { id: 9, category: 'eid', url: '/images/temi4.jpeg', alt: 'Eid Special Henna Design' },
+  { id: 10, category: 'nails', url: '/images/temi5.jpg', alt: 'Abstract Minimalist Nail Art' },
 ];
 
 type FilterType = 'all' | 'nails' | 'henna' | 'bridal' | 'eid';

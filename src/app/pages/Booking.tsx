@@ -78,22 +78,22 @@ export function Booking() {
       };
 
       const message = `
-🌟 *New Booking Request* 🌟
+New Booking Request
 
-*Service:* ${sanitizedData.service}
-*Date:* ${sanitizedData.date}
-*Time:* ${sanitizedData.time}
+Service: ${sanitizedData.service}
+Date: ${sanitizedData.date}
+Time: ${sanitizedData.time}
 
-*Client Details:*
+Client Details:
 Name: ${sanitizedData.name}
 Phone: ${sanitizedData.phone}
 WhatsApp: ${sanitizedData.whatsapp}
 Instagram: ${sanitizedData.instagram || 'N/A'}
 
-*Special Requests:*
+Special Requests:
 ${sanitizedData.requests || 'None'}
 
-Please confirm this booking. Thank you! ✨
+Please confirm this booking. Thank you!
       `.trim();
 
       const whatsappUrl = getWhatsAppUrl(SITE_CONFIG.phone, encodeURIComponent(message));

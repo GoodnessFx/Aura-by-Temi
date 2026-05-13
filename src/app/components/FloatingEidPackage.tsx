@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
-import { Sparkles, X, Gift, Zap } from 'lucide-react';
+import { X, Gift } from 'lucide-react';
 import { Link } from 'react-router';
 
 export function FloatingEidPackage() {
@@ -73,7 +73,6 @@ export function FloatingEidPackage() {
                 {/* Right Side: Content */}
                 <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-2 text-gold mb-4">
-                    <Sparkles size={20} />
                     <span className="tracking-[0.3em] text-xs font-bold uppercase">Exclusive Eid Offer</span>
                   </div>
                   
@@ -102,7 +101,6 @@ export function FloatingEidPackage() {
                           <h4 className="font-bold text-emerald">{pkg.name}</h4>
                           <p className="text-xs text-muted-foreground">{pkg.desc}</p>
                         </div>
-                        {pkg.featured && <Zap size={16} className="text-gold fill-gold" />}
                       </div>
                     ))}
                   </div>

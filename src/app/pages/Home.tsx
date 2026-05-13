@@ -150,19 +150,19 @@ export function Home() {
             {[
               {
                 title: 'Nail Art & Extensions',
-                image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=800&h=1000&fit=crop',
+                image: '/images/temi1.jpeg',
                 desc: 'Specializing in custom designs, from elegant French tips to intricate 3D art.',
                 category: 'Signature'
               },
               {
                 title: 'Pedicure & Foot Care',
-                image: 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&h=1000&fit=crop',
+                image: '/images/temi2.jpeg',
                 desc: 'A complete therapeutic experience for your feet, finished with perfection.',
                 category: 'Luxury'
               },
               {
                 title: 'Bridal & Event Henna',
-                image: 'https://images.unsplash.com/photo-1610088441520-4352457e7095?w=800&h=1000&fit=crop',
+                image: '/images/temi3.jpeg',
                 desc: 'Exquisite traditional and modern henna patterns that tell your unique story.',
                 category: 'Heritage'
               },
@@ -196,7 +196,7 @@ export function Home() {
                   to="/book"
                   className="inline-flex items-center gap-2 text-gold tracking-widest text-sm font-bold hover:gap-4 transition-all duration-300"
                 >
-                  BOOK SESSION <Zap size={14} />
+                  BOOK SESSION
                 </Link>
               </motion.div>
             ))}
@@ -220,7 +220,7 @@ export function Home() {
             >
               <div className="relative p-2 border border-gold/30 rounded-sm">
                 <img
-                  src="https://images.unsplash.com/photo-1610088441520-4352457e7095?w=1200&h=1600&fit=crop"
+                  src="/images/temi4.jpeg"
                   alt="Eid Combo Package"
                   className="w-full rounded-sm shadow-2xl"
                 />

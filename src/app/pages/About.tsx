@@ -44,7 +44,7 @@ export function About() {
               className="rounded-sm overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=900&fit=crop"
+                src="/images/temi5.jpg"
                 alt="Temi at work"
                 className="w-full h-full object-cover"
               />
@@ -204,7 +204,7 @@ export function About() {
                 viewport={{ once: true }}
                 className="rounded-sm overflow-hidden h-64 shadow-xl"
               >
-                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=800&fit=crop" className="w-full h-full object-cover" />
+                <img src="/images/temi1.jpeg" className="w-full h-full object-cover" />
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, y: -20 }}
@@ -213,7 +213,7 @@ export function About() {
                 transition={{ delay: 0.2 }}
                 className="rounded-sm overflow-hidden h-64 shadow-xl mt-8"
               >
-                <img src="https://images.unsplash.com/photo-1610088441520-4352457e7095?w=600&h=800&fit=crop" className="w-full h-full object-cover" />
+                <img src="/images/temi2.jpeg" className="w-full h-full object-cover" />
               </motion.div>
             </div>
           </div>

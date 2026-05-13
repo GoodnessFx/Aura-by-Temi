@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Phone, Clock, Instagram, Send, MessageCircle, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Clock, Instagram, Send, MessageCircle } from 'lucide-react';
 import { SITE_CONFIG } from '../config';
 import { getWhatsAppUrl } from '../lib/whatsapp';
 
@@ -15,12 +15,12 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `
-🌟 *New Inquiry from Website* 🌟
+New Inquiry from Website
 
-*Name:* ${formData.name}
-*Phone:* ${formData.phone}
+Name: ${formData.name}
+Phone: ${formData.phone}
 
-*Message:*
+Message:
 ${formData.message}
     `.trim();
 
@@ -121,13 +121,10 @@ ${formData.message}
             transition={{ delay: 0.4 }}
           >
             <div className="bg-matte-black p-12 rounded-sm shadow-2xl relative">
-              <div className="absolute top-8 right-8">
-                <Sparkles className="text-gold animate-pulse" />
-              </div>
-              <h2 className="text-4xl mb-4 font-heading text-gold italic">Special Inquiry?</h2>
-              <p className="text-ivory/60 mb-10 font-light leading-relaxed">
-                Fill out the form below and we'll get back to you to discuss your unique beauty needs.
-              </p>
+            <h2 className="text-4xl mb-4 font-heading text-gold italic">Special Inquiry?</h2>
+            <p className="text-ivory/60 mb-10 font-light leading-relaxed">
+              Fill out the form below and we'll get back to you to discuss your unique beauty needs.
+            </p>
 
               {submitted && (
                 <motion.div

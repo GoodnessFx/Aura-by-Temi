@@ -1,4 +1,3 @@
-import { MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { SITE_CONFIG } from '../config';
 import { getWhatsAppUrl } from '../lib/whatsapp';
@@ -43,7 +42,11 @@ export function WhatsAppButton() {
           repeatDelay: 2,
         }}
       />
-      <MessageCircle size={28} color="var(--ivory)" className="relative z-10" />
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+        alt="WhatsApp" 
+        className="w-8 h-8 relative z-10"
+      />
     </motion.a>
   );
 }
