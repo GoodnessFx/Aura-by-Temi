@@ -57,20 +57,17 @@ export function About() {
               className="space-y-6"
             >
               <h2 className="text-4xl" style={{ color: 'var(--emerald)' }}>
-                Meet Temi
+                Meet Our CEO
               </h2>
+              <h3 className="text-2xl text-gold font-medium">Adebowale Zainab</h3>
               <p className="text-lg leading-relaxed" style={{ color: 'var(--matte-black)' }}>
-                With over 5 years of experience in the beauty industry, Temi has built AURA into
-                Lagos's premier destination for luxury nail art and henna services.
+                A proud graduate of <span className="font-bold">Lagos State University</span> with a degree in <span className="italic">Pharmacology</span>, Zainab brings a unique blend of scientific precision and artistic passion to the beauty industry.
               </p>
               <p className="text-lg leading-relaxed" style={{ color: 'var(--matte-black)' }}>
-                Trained in both traditional and contemporary techniques, Temi combines artistic
-                vision with technical precision to create truly unique designs that reflect each
-                client's personal style.
+                With over 5 years of experience, she has built AURA into Lagos's premier destination for luxury nail art and henna services. Her background in pharmacology ensures a deep understanding of product safety and quality, providing clients with not just beauty, but also peace of mind.
               </p>
               <p className="text-lg leading-relaxed" style={{ color: 'var(--matte-black)' }}>
-                At AURA, we believe beauty is more than skin deep—it's about confidence, self-expression,
-                and celebrating your unique aura.
+                Trained in both traditional and contemporary techniques, Zainab combines her meticulous attention to detail with an innate artistic vision to create truly unique designs that reflect each client's personal style.
               </p>
             </motion.div>
           </div>
