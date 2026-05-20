@@ -3,6 +3,72 @@ import { Link } from 'react-router';
 import { ChevronDown, Star, Shield, Zap, Heart } from 'lucide-react';
 import { useRef } from 'react';
 
+const featuredServices = [
+  {
+    title: 'Nail Art & Extensions',
+    image: '/images/temi1.jpeg',
+    desc: 'Specializing in custom designs, from elegant French tips to intricate 3D art.',
+    category: 'Signature'
+  },
+  {
+    title: 'Pedicure & Foot Care',
+    image: '/images/temi2.jpeg',
+    desc: 'A complete therapeutic experience for your feet, finished with perfection.',
+    category: 'Luxury'
+  },
+  {
+    title: 'Bridal & Event Henna',
+    image: '/images/temi3.jpeg',
+    desc: 'Exquisite traditional and modern henna patterns that tell your unique story.',
+    category: 'Heritage'
+  },
+];
+
+const myWorkItems = [
+  {
+    image: '/images/NEW AURA 1.jpeg',
+    title: 'Signature Aura Set',
+    tag: 'Featured Work',
+    type: 'image'
+  },
+  {
+    image: '/images/temi1.jpeg',
+    title: 'Luxury Nail Finish',
+    tag: 'Nail Art',
+    type: 'image'
+  },
+  {
+    image: '/images/temi2.jpeg',
+    title: 'Polished Client Look',
+    tag: 'Salon Finish',
+    type: 'image'
+  },
+  {
+    image: '/images/temi3.jpeg',
+    title: 'Detailed Henna Design',
+    tag: 'Henna',
+    type: 'image'
+  },
+  {
+    image: '/images/temi4.jpeg',
+    title: 'Event Ready Glam',
+    tag: 'Bridal / Events',
+    type: 'image'
+  },
+  {
+    image: '/images/temi5.jpg',
+    title: 'Soft Luxury Details',
+    tag: 'Custom Design',
+    type: 'image'
+  },
+  {
+    image: '/images/gallery/NEW AURA 2.mp4',
+    title: 'Aura Behind The Scenes',
+    tag: 'Video Showcase',
+    type: 'video'
+  },
+];
+
 export function Home() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -147,26 +213,7 @@ export function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-            {[
-              {
-                title: 'Nail Art & Extensions',
-                image: '/images/temi1.jpeg',
-                desc: 'Specializing in custom designs, from elegant French tips to intricate 3D art.',
-                category: 'Signature'
-              },
-              {
-                title: 'Pedicure & Foot Care',
-                image: '/images/temi2.jpeg',
-                desc: 'A complete therapeutic experience for your feet, finished with perfection.',
-                category: 'Luxury'
-              },
-              {
-                title: 'Bridal & Event Henna',
-                image: '/images/temi3.jpeg',
-                desc: 'Exquisite traditional and modern henna patterns that tell your unique story.',
-                category: 'Heritage'
-              },
-            ].map((service, index) => (
+            {featuredServices.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
@@ -198,6 +245,86 @@ export function Home() {
                 >
                   BOOK SESSION
                 </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* My Work Section */}
+      <section className="py-32 px-4 bg-muted">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between mb-16"
+          >
+            <div className="max-w-2xl">
+              <span className="text-gold tracking-[0.35em] text-sm font-bold block mb-4">MY WORK</span>
+              <h2 className="text-5xl md:text-7xl mb-6 tracking-tight" style={{ color: 'var(--emerald)' }}>
+                See What I Create
+              </h2>
+              <p className="text-lg leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
+                Customers can explore some of my recent nail and henna work, then head straight to the gallery or book an appointment.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/gallery"
+                className="px-8 py-4 rounded-sm tracking-widest text-sm text-center transition-all duration-300 border-2 hover:bg-gold hover:text-matte-black"
+                style={{ borderColor: 'var(--gold)', color: 'var(--emerald)' }}
+              >
+                CHECK OUT MY WORK
+              </Link>
+              <Link
+                to="/book"
+                className="px-8 py-4 rounded-sm tracking-widest text-sm text-center transition-all duration-300"
+                style={{ backgroundColor: 'var(--emerald)', color: 'var(--ivory)' }}
+              >
+                BOOK NOW
+              </Link>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {myWorkItems.map((item, index) => (
+              <motion.div
+                key={item.image}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="group rounded-sm overflow-hidden bg-ivory shadow-lg"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  {item.type === 'video' ? (
+                    <video
+                      src={item.image}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      controls
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-matte-black/70 via-matte-black/10 to-transparent" />
+                  <span className="absolute top-5 left-5 px-3 py-1 bg-gold text-matte-black text-xs tracking-widest font-bold">
+                    {item.tag}
+                  </span>
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-2xl tracking-tight text-ivory">{item.title}</h3>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

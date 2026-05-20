@@ -4,16 +4,13 @@ import Masonry from 'react-responsive-masonry';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryImages = [
-  { id: 1, category: 'nails', url: '/images/temi1.jpeg', alt: 'Signature Red French Tips with Artistic Dot Accents' },
-  { id: 2, category: 'nails', url: '/images/temi2.jpeg', alt: 'Custom Patterned Nail Extensions' },
-  { id: 3, category: 'henna', url: '/images/temi3.jpeg', alt: 'Intricate Bridal Henna Artistry' },
-  { id: 4, category: 'nails', url: '/images/temi4.jpeg', alt: 'Luxury Pedicure with Custom French Design' },
-  { id: 5, category: 'henna', url: '/images/temi5.jpg', alt: 'Traditional Floral Henna Patterns' },
-  { id: 6, category: 'nails', url: '/images/temi1.jpeg', alt: 'Classic Soft Pink Manicure' },
-  { id: 7, category: 'bridal', url: '/images/temi2.jpeg', alt: 'Elegant Bridal Nail Set' },
-  { id: 8, category: 'nails', url: '/images/temi3.jpeg', alt: 'Matte Finish Acrylic Extensions' },
-  { id: 9, category: 'eid', url: '/images/temi4.jpeg', alt: 'Eid Special Henna Design' },
-  { id: 10, category: 'nails', url: '/images/temi5.jpg', alt: 'Abstract Minimalist Nail Art' },
+  { id: 1, category: 'nails', url: '/images/NEW AURA 1.jpeg', alt: 'Featured Aura signature nail set', type: 'image' },
+  { id: 2, category: 'nails', url: '/images/temi1.jpeg', alt: 'Luxury nail set with polished detail work', type: 'image' },
+  { id: 3, category: 'nails', url: '/images/temi2.jpeg', alt: 'Custom nail design with a clean salon finish', type: 'image' },
+  { id: 4, category: 'henna', url: '/images/temi3.jpeg', alt: 'Detailed henna artistry for special occasions', type: 'image' },
+  { id: 5, category: 'bridal', url: '/images/temi4.jpeg', alt: 'Elegant bridal or event-ready beauty styling', type: 'image' },
+  { id: 6, category: 'eid', url: '/images/temi5.jpg', alt: 'Soft luxury design perfect for Eid celebrations', type: 'image' },
+  { id: 7, category: 'nails', url: '/images/gallery/NEW AURA 2.mp4', alt: 'Aura by Temi video showcase', type: 'video' },
 ];
 
 type FilterType = 'all' | 'nails' | 'henna' | 'bridal' | 'eid';
@@ -25,6 +22,7 @@ export function Gallery() {
   const filteredImages = filter === 'all'
     ? galleryImages
     : galleryImages.filter(img => img.category === filter);
+  const selectedMedia = filteredImages.find(img => img.id === selectedImage);
 
   const filters: { value: FilterType; label: string }[] = [
     { value: 'all', label: 'All' },
@@ -106,12 +104,26 @@ export function Gallery() {
                 onClick={() => setSelectedImage(image.id)}
                 className="cursor-pointer rounded-sm overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  loading="lazy"
-                  className="w-full h-auto"
-                />
+                {image.type === 'video' ? (
+                  <video
+                    src={image.url}
+                    className="w-full h-auto"
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                    controls
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    loading="lazy"
+                    className="w-full h-auto"
+                  />
+                )}
               </motion.div>
             ))}
           </Masonry>
@@ -129,12 +141,26 @@ export function Gallery() {
                 onClick={() => setSelectedImage(image.id)}
                 className="cursor-pointer rounded-sm overflow-hidden shadow-lg transition-all duration-300"
               >
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  loading="lazy"
-                  className="w-full h-auto"
-                />
+                {image.type === 'video' ? (
+                  <video
+                    src={image.url}
+                    className="w-full h-auto"
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                    controls
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    loading="lazy"
+                    className="w-full h-auto"
+                  />
+                )}
               </motion.div>
             ))}
           </Masonry>
@@ -196,15 +222,33 @@ export function Gallery() {
               <ChevronLeft size={40} color="var(--ivory)" />
             </button>
 
-            <motion.img
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              src={filteredImages.find(img => img.id === selectedImage)?.url}
-              alt={filteredImages.find(img => img.id === selectedImage)?.alt}
-              className="max-w-full max-h-[90vh] object-contain rounded-sm"
-              onClick={(e) => e.stopPropagation()}
-            />
+            {selectedMedia?.type === 'video' ? (
+              <motion.video
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                src={selectedMedia.url}
+                className="max-w-full max-h-[90vh] object-contain rounded-sm"
+                onClick={(e) => e.stopPropagation()}
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                Your browser does not support the video tag.
+              </motion.video>
+            ) : (
+              <motion.img
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                src={selectedMedia?.url}
+                alt={selectedMedia?.alt}
+                className="max-w-full max-h-[90vh] object-contain rounded-sm"
+                onClick={(e) => e.stopPropagation()}
+              />
+            )}
 
             <button
               onClick={(e) => {
